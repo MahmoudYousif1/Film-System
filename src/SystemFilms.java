@@ -1,10 +1,22 @@
 package src;
 import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 /**
  * The SystemFilms class represents the system of films.
  */
 class SystemFilms {
+
+    // JDBC driver name and database URL connections//
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/films";
+    static  final String USER = "root";
+    static final String PASS = "pass1234";
+
 
     List<ActorData> listOfActors = new ArrayList<>(); // List of actors
     List<ActorRoles> listOfActorRoles = new ArrayList<>(); // List of actor roles
@@ -568,5 +580,16 @@ class SystemFilms {
         return sortedSoundTracks;
     }
 
-}
 
+    
+    public static void main(String[] arc){
+
+        try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement stmt = conn.createStatement();
+        ) {
+            System.out.println("Connection established to MySQL database.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
