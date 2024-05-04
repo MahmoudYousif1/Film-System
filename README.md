@@ -10,7 +10,7 @@ Make sure to hava a JDK compiler installed
 
 ## Running Locally
 
-clone the repository: git clone https://github.com/MahmoudYousif1/Film-System.git
-cd into the project: cd Film-System
-run make in the terminal to compile the code: make
-run the program using: java.Film-System
+- clone the repository: git clone https://github.com/MahmoudYousif1/Film-System.git
+- cd into the project: cd Film-System
+- run make in the terminal to compile the code: make
+- run the program using: java.Film-System
